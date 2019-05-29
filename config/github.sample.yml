@@ -1,0 +1,24 @@
+services:
+  - name: github_api
+    url: https://api.github.com
+    operations:
+      - name: get_repos
+        path: /users/:username/repos
+        method: get
+        response:
+          - key: id
+            metonym: identifier
+            type: integer
+          - key: full_name
+            type: string
+          - key: owner
+            type: owner
+
+    representations:
+      owner:
+        - key: login
+          metonym: username
+          type: string
+        - key: url
+          metonym: profile_url
+          type: string

@@ -1,0 +1,19 @@
+# Service provided by:
+# https://reqres.in/
+
+services:
+  - name: reqres
+    url: https://reqres.in/api
+    operations:
+      - name: create_user
+        path: /users
+        method: post
+        response:
+          - key: name
+            type: string
+          - key: job
+            type: string
+          - key: id
+            type: string
+          - key: createdAt
+            type: string

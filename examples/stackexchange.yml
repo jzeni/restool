@@ -1,0 +1,17 @@
+services:
+  - name: stackexchange
+    url: https://api.stackexchange.com
+    operations:
+      - name: get_repos
+        path: /2.2/users/:id?order=desc&sort=reputation&site=stackoverflow
+        method: get
+        response:
+          - key: items
+            type: user_item
+
+    representations:
+      user_item:
+        - key: is_employee
+          type: string
+        - key: reputation
+          type: integer
