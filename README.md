@@ -47,9 +47,7 @@ Create the service object passing a response handler block:
 require 'restool'
 
 remote_service = Restool.create('github_api') do |response, code|
-                  unless code.to_i == 200
-                    raise StandardError, JSON(response)['message']
-                  end
+                  raise MyServiceError.new(response) unless code.to_i == 200
 
                   JSON(response)
                  end
