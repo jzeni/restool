@@ -42,7 +42,7 @@ services:
           type: string
 ```
 
-Create the service object passing a response handler block:
+Create the service object passing a response handler block, which will be automatically executed for each response:
 ```
 require 'restool'
 
@@ -60,7 +60,9 @@ params       = { sort: :created, direction: :desc }
 
 repositories = remote_service.get_repos(uri_params, params)
 ```
-The response object defines a method for each attribute of the response, with the same name or with the `metonym` name if given.
+And that's it!
+
+The response object will defina a method for each attribute of the response, with the same name or with the `metonym` name if given:
 
 ```
 first_repository = repositories.first
