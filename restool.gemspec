@@ -1,4 +1,7 @@
-require_relative 'lib/restool/version'
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+
+require 'restool/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "restool"
@@ -10,7 +13,6 @@ Gem::Specification.new do |spec|
   spec.description   = 'Make HTTP requests and handle its responses using simple method calls. Restool turns your HTTP API and its responses into Ruby interfaces.'
   spec.homepage      = "https://github.com/jzeni/restool"
   spec.license       = 'MIT'
-  spec.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
   spec.require_paths = %w[lib]
 
   spec.files         = Dir.glob('{lib}/**/*')

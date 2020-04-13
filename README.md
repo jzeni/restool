@@ -62,7 +62,7 @@ repositories = remote_service.get_repos(uri_params, params)
 ```
 And that's it!
 
-The response object will defina a method for each attribute of the response, with the same name or with the `metonym` name if given:
+The response object will define a method for each attribute of the response, with the same name or with the `metonym` name if given:
 
 ```
 first_repository = repositories.first
