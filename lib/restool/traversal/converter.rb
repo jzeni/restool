@@ -34,6 +34,11 @@ module Restool
         representation.fields.each do |field|
           value = request_response[field.key]
 
+          if value.nil?
+            set_var(object, field, nil)
+            next
+          end
+
           object.class.__send__(:attr_accessor, var_name(field))
 
           if Restool::Traversal::TRAVERSAL_TYPES.include?(field.type.to_sym)
@@ -53,7 +58,7 @@ module Restool
                       parse_value(field.type, value)
                     end
 
-        object.__send__("#{var_name(field)}=", new_value)
+        set_var(object, field, new_value)
       end
 
       def self.map_complex_field(value, field, object, representations)
@@ -65,6 +70,10 @@ module Restool
                       convert(value, operation_representation, representations)
                     end
 
+        set_var(object, field, new_value)
+      end
+
+      def self.set_var(object, field, new_value)
         object.__send__("#{var_name(field)}=", new_value)
       end
 
@@ -75,7 +84,7 @@ module Restool
       def self.parse_value(type, value)
         case type
         when Restool::Traversal::TRAVERSAL_TYPE_STRING
-          value
+          value.to_s
         when Restool::Traversal::TRAVERSAL_TYPE_INTEGER
           Integer(value)
         when Restool::Traversal::TRAVERSAL_TYPE_DECIMAL

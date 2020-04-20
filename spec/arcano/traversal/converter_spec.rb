@@ -91,5 +91,16 @@ describe Restool::Traversal::Converter do
 
       it { is_expected.to eq([]) }
     end
+
+    context 'when the key is missing in the response' do
+      let(:request_response) do
+        {
+          first_name: 'Homer', address: { street: 'Evergreen Terrace' }
+        }
+      end
+
+      its(:surname) { is_expected.to be_nil }
+      its('address.number') { is_expected.to be_nil }
+    end
   end
 end
