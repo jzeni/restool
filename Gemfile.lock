@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    restool (0.1.3)
+    restool (0.1.4)
       persistent_http (~> 2)
 
 GEM
