@@ -75,6 +75,8 @@ owner_url        = first_repository.owner.url
 
 If you prefer the raw response (JSON) you should not define the `response` parameter in the operation configuration.
 
+Missing keys in the response but present in the representation will have a `nil` value in the converted response object.
+
 ### Element types
 
 The available types are:
