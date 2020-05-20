@@ -3,6 +3,7 @@
 Make HTTP requests and handle its responses using simple method calls. Restool turns your HTTP API and its responses into Ruby interfaces.
 
 [![<CircleCI>](https://circleci.com/gh/jzeni/restool.svg?style=svg)](https://circleci.com/gh/jzeni/restool/tree/master)
+[![Build Status](https://travis-ci.org/jzeni/restool.svg?branch=master)](https://travis-ci.org/jzeni/restool)
 [![Code Climate](https://codeclimate.com/github/jzeni/restool.svg)](https://codeclimate.com/github/jzeni/restool)
 
 ## Installation

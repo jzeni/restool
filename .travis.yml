@@ -1,0 +1,16 @@
+# https://docs.travis-ci.com/user/customizing-the-build/
+os: linux
+dist: xenial
+language: ruby
+cache: bundler
+rvm: # the project is compatible with older versions of ruby but not in test environment
+  - 2.5.8
+  - 2.6.6
+  - 2.7.1
+notifications:
+  recipients:
+    - juanandreszeni@gmail.com
+before_install:
+  - gem install bundler -v 1.17.3
+script:
+  - bundle exec rspec
