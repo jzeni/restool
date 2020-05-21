@@ -2,6 +2,8 @@
 
 Make HTTP requests and handle its responses using simple method calls. Restool turns your HTTP API and its responses into Ruby interfaces.
 
+Probably the easiest way of calling an API in Ruby projects!
+
 [![Gem Version](https://badge.fury.io/rb/restool.png)](http://badge.fury.io/rb/restool)
 [![CircleCI build status](https://circleci.com/gh/jzeni/restool.svg?style=shield)](https://circleci.com/gh/jzeni/restool/tree/master)
 [![Travis Build Status](https://travis-ci.org/jzeni/restool.svg?branch=master)](https://travis-ci.org/jzeni/restool)
