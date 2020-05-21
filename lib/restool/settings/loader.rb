@@ -105,7 +105,7 @@ module Restool
       def self.config
         return @config if @config
 
-        files_to_load = Dir['config/restool/*'] + ['config/restool.yml', 'config/restool.json']
+        files_to_load = Dir['config/restool/*'] + ['config/restool.yml', 'config/restool.yaml', 'config/restool.json']
 
         @config = { 'services' => [] }
 
@@ -114,21 +114,17 @@ module Restool
 
           extension = File.extname(file_name)
 
-          content = if extension == '.yml'
-            YAML.load_file(file_name)
-          elsif extension == '.json'
-            json_file = File.read(file_name)
-            JSON.parse(json_file)
-          end
+          content = if extension == '.yml' || extension == '.yaml'
+                      YAML.load_file(file_name)
+                    elsif extension == '.json'
+                      json_file = File.read(file_name)
+                      JSON.parse(json_file)
+                    end
 
           @config['services'] += content['services']
         end
 
         @config
-      end
-
-      def self.validate
-        # TODO: perform validations
       end
 
     end
