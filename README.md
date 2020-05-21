@@ -3,8 +3,8 @@
 Make HTTP requests and handle its responses using simple method calls. Restool turns your HTTP API and its responses into Ruby interfaces.
 
 [![Gem Version](https://badge.fury.io/rb/restool.png)](http://badge.fury.io/rb/restool)
-[![<CircleCI>](https://circleci.com/gh/jzeni/restool.svg?style=shield)](https://circleci.com/gh/jzeni/restool/tree/master)
-[![Build Status](https://travis-ci.org/jzeni/restool.svg?branch=master)](https://travis-ci.org/jzeni/restool)
+[![CircleCI build status](https://circleci.com/gh/jzeni/restool.svg?style=shield)](https://circleci.com/gh/jzeni/restool/tree/master)
+[![Travis Build Status](https://travis-ci.org/jzeni/restool.svg?branch=master)](https://travis-ci.org/jzeni/restool)
 [![Code Climate](https://codeclimate.com/github/jzeni/restool.svg)](https://codeclimate.com/github/jzeni/restool)
 [![Join the chat at https://gitter.im/jzeni/restool](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jzeni/restool)
 
@@ -156,6 +156,12 @@ For instance, for the Github API we could have used `config/restool/github.json`
 ## Multipart
 
 This gem currently does not support multipart requests
+
+# Questions?
+
+If you have any question or doubt regarding Restool, please
+[open a question on Stackoverflow](http://stackoverflow.com/questions/ask?tags=restool) with tag
+[restool](http://stackoverflow.com/questions/tagged/restool), or [join the chat on Gitter](https://gitter.im/jzeni/restool)
 
 # Contributing
 1. Fork it
