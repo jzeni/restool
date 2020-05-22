@@ -19,6 +19,9 @@ module Restool
       def self.convert(request_response, response_representation, representations)
         object = Restool::Traversal::Object.new
 
+        object.class.__send__(:attr_accessor, :_raw)
+        object.__send__("_raw=", request_response)
+
         if request_response.is_a?(Array)
           request_response.map do |element|
             map_response_to_representation(response_representation, element, object, representations)

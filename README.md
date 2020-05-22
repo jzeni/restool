@@ -79,11 +79,16 @@ id               = first_repository.id
 full_name        = first_repository.full_name
 owner_username   = first_repository.owner.username
 owner_url        = first_repository.owner.url
+
+raw_response     = first_repository._raw   # full raw response
 ```
 
-If you prefer the raw response (JSON) you should not define the `response` parameter in the operation configuration.
+If you prefer to work with the raw responses (JSON) you should not define the `response` parameter in the operation configuration.
 
-Missing keys in the response but present in the representation will have a `nil` value in the converted response object.
+Some important aspects:
+- Missing keys in the response but present in the representation will have a `nil` value in the converted response object.
+- The method `._raw` returns the response as it was returned by the response block, including attributes that might not be in the response representation.
+- If the response is an array you cannot call `._raw` directly, instead call `._raw` for each element.
 
 ### Element types
 

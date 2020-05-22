@@ -49,6 +49,8 @@ describe Restool::Traversal::Converter do
     its('address.number') { is_expected.to eq(742) }
     its('address.street') { is_expected.to eq('Evergreen Terrace') }
 
+    its(:raw_response) { is_expected.to eq(request_response) }
+
     context 'when a metonym is not defined for a field key' do
       let(:response_representation) do
         FactoryBot.build(
