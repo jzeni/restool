@@ -105,7 +105,7 @@ module Restool
       def self.config
         return @config if @config
 
-        files_to_load = Dir['config/restool/*'] + ['config/restool.yml', 'config/restool.yaml', 'config/restool.json']
+        files_to_load = Dir['config/restool/*.yml'] + Dir['config/restool/*.yaml'] + ['config/restool.yml', 'config/restool.yaml', 'config/restool.json']
 
         @config = { 'services' => [] }
 

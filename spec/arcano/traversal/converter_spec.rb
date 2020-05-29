@@ -49,7 +49,23 @@ describe Restool::Traversal::Converter do
     its('address.number') { is_expected.to eq(742) }
     its('address.street') { is_expected.to eq('Evergreen Terrace') }
 
-    its(:raw_response) { is_expected.to eq(request_response) }
+    its(:_raw) { is_expected.to eq(request_response) }
+
+    context 'when the request response has string keys' do
+      let(:request_response) do
+        {
+          'first_name' => 'Homer', 'last_name' => 'Simpson',
+          address: { number: 742, street: 'Evergreen Terrace' }
+        }
+      end
+
+      its(:name) { is_expected.to eq('Homer') }
+      its(:surname) { is_expected.to eq('Simpson') }
+      its('address.number') { is_expected.to eq(742) }
+      its('address.street') { is_expected.to eq('Evergreen Terrace') }
+
+      its(:_raw) { is_expected.to eq(request_response) }
+    end
 
     context 'when a metonym is not defined for a field key' do
       let(:response_representation) do

@@ -35,14 +35,14 @@ module Restool
 
       def self.map_response_to_representation(representation, request_response, object, representations)
         representation.fields.each do |field|
-          value = request_response[field.key]
+          value = request_response[field.key.to_s] || request_response[field.key.to_sym]
+
+          object.class.__send__(:attr_accessor, var_name(field))
 
           if value.nil?
             set_var(object, field, nil)
             next
           end
-
-          object.class.__send__(:attr_accessor, var_name(field))
 
           if Restool::Traversal::TRAVERSAL_TYPES.include?(field.type.to_sym)
             map_primitive_field(value, field, object)
