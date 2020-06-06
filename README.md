@@ -132,6 +132,33 @@ services:
     ...
 ```
 
+### Logging
+```
+require "logger"
+
+my_logger = Logger.new(STDOUT)  # or Logger.new("/path/to/my.log")
+
+remote_service = Restool.create('github_api', logger: my_logger) do |response, code|
+                   ...
+                 end
+```
+
+### Debugging
+```
+remote_service = Restool.create('github_api', debug: true) do |response, code|
+                   ...
+                 end
+```
+
+### Timeout
+```
+services:
+  - name: example_api
+    url: http://example.api
+    timeout: 20 #seconds
+    ...
+```
+
 ### Persistent connection
 
 ```
@@ -142,15 +169,6 @@ services:
       pool_size: 10
       warn_timeout: 0.25
       force_retry: false
-    ...
-```
-
-### Timeout
-```
-services:
-  - name: example_api
-    url: http://example.api
-    timeout: 20 #seconds
     ...
 ```
 

@@ -11,7 +11,7 @@ module Restool
         @service_config = service_config
         @response_handler = response_handler
         @remote_client = Restool::Service::RemoteClient.new(service_config.host, service_config.verify_ssl,
-                                                            service_config.persistent, service_config.timeout)
+                                                            service_config.persistent, service_config.timeout, service_config.opts)
 
         define_operations(
           @service_config, method(:make_request), method(:make_request_with_uri_params)

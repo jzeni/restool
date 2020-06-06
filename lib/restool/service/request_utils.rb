@@ -1,3 +1,5 @@
+require_relative 'operation_request'
+
 module Restool
   module Service
     module RequestUtils
@@ -23,7 +25,7 @@ module Restool
 
         headers.each { |k, v| request[k] = v } if headers
 
-        request
+        OperationRequest.new(request, method, path, params, headers)
       end
 
       def self.build_base_request(method, path)

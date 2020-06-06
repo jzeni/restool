@@ -11,19 +11,19 @@ module Restool
       DEFAULT_SSL_VERIFY = false
 
 
-      def self.load(service_name)
+      def self.load(service_name, opts)
         service_config = config['services'].detect do |service|
           service['name'] == service_name
         end
 
         raise "Service #{service_name} not found in configuration" unless service_config
 
-        build_service(service_config)
+        build_service(service_config, opts)
       end
 
       private
 
-      def self.build_service(service_config)
+      def self.build_service(service_config, opts)
         representations = if service_config['representations']
                             build_representations(service_config['representations'])
                           else
@@ -53,7 +53,8 @@ module Restool
           service_config['timeout'] || DEFAULT_TIMEOUT,
           representations,
           basic_auth,
-          service_config['ssl_verify'] || DEFAULT_SSL_VERIFY
+          service_config['ssl_verify'] || DEFAULT_SSL_VERIFY,
+          opts
         )
       end
 
