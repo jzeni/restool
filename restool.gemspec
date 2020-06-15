@@ -17,5 +17,5 @@ Gem::Specification.new do |spec|
 
   spec.files         = Dir.glob('{lib}/**/*')
 
-  spec.add_dependency('persistent_http', '~> 2')
+  spec.add_dependency('persistent_http')
 end
