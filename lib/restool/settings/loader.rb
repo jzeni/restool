@@ -33,15 +33,6 @@ module Restool
         basic_auth = service_config['basic_auth'] || service_config['basic_authentication']
         basic_auth = BasicAuthentication.new(basic_auth['user'], basic_auth['password']) if basic_auth
 
-        persistent_connection = service_config['persistent']
-        persistent_connection = if persistent_connection
-                                  PersistentConnection.new(
-                                    persistent_connection['pool_size'],
-                                    persistent_connection['warn_timeout'],
-                                    persistent_connection['force_retry'],
-                                  )
-                                end
-
         # Support host + common path in url config, e.g. api.com/v2/
         paths_prefix_in_host = URI(service_config['url']).path
 
@@ -49,7 +40,6 @@ module Restool
           service_config['name'],
           service_config['url'],
           service_config['operations'].map { |operation| build_operation(operation, paths_prefix_in_host) },
-          persistent_connection,
           service_config['timeout'] || DEFAULT_TIMEOUT,
           representations,
           basic_auth,

@@ -5,7 +5,6 @@ FactoryBot.define  do
     name            { 'name' }
     url             { 'http://hello.com' }
     operations      { FactoryBot.build_list(:operations) }
-    association     :persistent, factory: :persistent_connection
     timeout         { rand(1..100) }
     representations { FactoryBot.build_list(:representation) }
     association     :basic_auth, factory: :basic_authentication

@@ -1,5 +1,3 @@
-require 'persistent_http'
-
 require_relative 'request_utils'
 require_relative '../logger/request_logger'
 
@@ -7,30 +5,9 @@ module Restool
   module Service
     class RemoteClient
 
-      def initialize(host, verify_ssl, persistent_connection, timeout, opts)
+      def initialize(host, verify_ssl, timeout, opts)
         @request_logger = Restool::RequestLogger.new(host, opts)
-
-        @connection = if persistent_connection
-                        PersistentHTTP.new(
-                          pool_size:    persistent_connection.pool_size,
-                          pool_timeout: timeout,
-                          warn_timeout: persistent_connection.warn_timeout,
-                          force_retry:  persistent_connection.force_retry,
-                          url:          host,
-                          read_timeout: timeout,
-                          open_timeout: timeout,
-                          verify_mode: verify_ssl?(verify_ssl)
-                        )
-                      else
-                        uri               = URI.parse(host)
-                        http              = Net::HTTP.new(uri.host, uri.port)
-                        http.use_ssl      = uri.is_a?(URI::HTTPS)
-                        http.verify_mode  = verify_ssl?(verify_ssl)
-                        http.read_timeout = timeout
-                        http.open_timeout = timeout
-                        http.set_debug_output($stdout) if opts[:debug]
-                        http
-                      end
+        @connection = connection
       end
 
       def make_request(path, method, request_params, headers, basic_auth)
@@ -42,6 +19,20 @@ module Restool
       end
 
       private
+
+      def connection
+        uri = URI.parse(host)
+
+        connection = Net::HTTP.new(uri.host, uri.port)
+
+        connection.use_ssl      = uri.is_a?(URI::HTTPS)
+        connection.verify_mode  = verify_ssl?(verify_ssl)
+        connection.read_timeout = timeout
+        connection.open_timeout = timeout
+        connection.set_debug_output($stdout) if opts[:debug]
+
+        connection
+      end
 
       def verify_ssl?(verify_ssl_setting)
         verify_ssl_setting ? OpenSSL::SSL::VERIFY_PEER : OpenSSL::SSL::VERIFY_NONE

@@ -159,19 +159,6 @@ services:
     ...
 ```
 
-### Persistent connection
-
-```
-services:
-  - name: example_api
-    url: http://example.api
-    persistent_connection:
-      pool_size: 10
-      warn_timeout: 0.25
-      force_retry: false
-    ...
-```
-
 ## Multiple services
 
 You can define multiple services, each one in a different file. These files should be placed in a `config/restool/` directory.

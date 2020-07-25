@@ -16,6 +16,4 @@ Gem::Specification.new do |spec|
   spec.require_paths = %w[lib]
 
   spec.files         = Dir.glob('{lib}/**/*')
-
-  spec.add_dependency('persistent_http')
 end

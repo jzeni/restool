@@ -2,7 +2,6 @@ PATH
   remote: .
   specs:
     restool (0.1.7)
-      persistent_http
 
 GEM
   remote: http://rubygems.org/
@@ -17,13 +16,9 @@ GEM
     diff-lcs (1.3)
     factory_bot (5.1.1)
       activesupport (>= 4.2.0)
-    gene_pool (1.5.0)
-      concurrent-ruby (>= 1.0)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     minitest (5.14.1)
-    persistent_http (2.0.3)
-      gene_pool (>= 1.3)
     rspec (3.8.0)
       rspec-core (~> 3.8.0)
       rspec-expectations (~> 3.8.0)
