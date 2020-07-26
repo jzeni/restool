@@ -132,6 +132,13 @@ services:
     ...
 ```
 
+or pass the credentials when creating the service:
+```
+opts = { basic_auth: { user: 'my_user', password: ENV['GITHUB_API_PASSWORD'] } }
+
+remote_service = Restool.create('github_api', opts) do |response, code|
+```
+
 ### Logging
 ```
 require "logger"

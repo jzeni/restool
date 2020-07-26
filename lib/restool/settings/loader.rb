@@ -30,7 +30,7 @@ module Restool
                             []
                           end
 
-        basic_auth = service_config['basic_auth'] || service_config['basic_authentication']
+        basic_auth = opts['basic_auth'] || opts['basic_authentication'] || service_config['basic_auth'] || service_config['basic_authentication']
         basic_auth = BasicAuthentication.new(basic_auth['user'], basic_auth['password']) if basic_auth
 
         # Support host + common path in url config, e.g. api.com/v2/
