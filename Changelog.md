@@ -1,3 +1,9 @@
+## 1.0.0
+
+* Remove support for persistent connections
+* Support basic auth via options when creating the Restool service
+* Support service name as symbol
+
 ## 0.1.6
 
 * Add logger option
