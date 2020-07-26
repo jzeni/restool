@@ -13,7 +13,7 @@ module Restool
 
       def self.load(service_name, opts)
         service_config = config['services'].detect do |service|
-          service['name'] == service_name
+          service['name'] == service_name.to_s
         end
 
         raise "Service #{service_name} not found in configuration" unless service_config
