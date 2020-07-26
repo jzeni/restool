@@ -1,3 +1,4 @@
+require "net/http"
 require_relative 'request_utils'
 require_relative '../logger/request_logger'
 
@@ -7,7 +8,7 @@ module Restool
 
       def initialize(host, verify_ssl, timeout, opts)
         @request_logger = Restool::RequestLogger.new(host, opts)
-        @connection = connection
+        @connection = build_connection(host, verify_ssl, timeout, opts)
       end
 
       def make_request(path, method, request_params, headers, basic_auth)
@@ -20,7 +21,7 @@ module Restool
 
       private
 
-      def connection
+      def build_connection(host, verify_ssl, timeout, opts)
         uri = URI.parse(host)
 
         connection = Net::HTTP.new(uri.host, uri.port)

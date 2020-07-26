@@ -171,9 +171,11 @@ This gem currently does not support multipart requests
 
 # Questions?
 
-If you have any question or doubt regarding Restool, please
-[open a question on Stackoverflow](http://stackoverflow.com/questions/ask?tags=restool) with tag
-[restool](http://stackoverflow.com/questions/tagged/restool), or [join the chat on Gitter](https://gitter.im/restool/community)
+If you have any question or doubt regarding Restool you can:
+- create an issue
+- [open a question on Stackoverflow](http://stackoverflow.com/questions/ask?tags=restool) with tag
+[restool](http://stackoverflow.com/questions/tagged/restool)
+- or [join the chat on Gitter](https://gitter.im/restool/community)
 
 # Contributing
 1. Fork it

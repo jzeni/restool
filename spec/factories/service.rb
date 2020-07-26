@@ -5,7 +5,7 @@ FactoryBot.define  do
     name            { 'name' }
     url             { 'http://hello.com' }
     operations      { FactoryBot.build_list(:operations) }
-    timeout         { rand(1..100) }
+    # timeout         { rand(1..100) } # timeout seems to be a reserved word 
     representations { FactoryBot.build_list(:representation) }
     association     :basic_auth, factory: :basic_authentication
     verify_ssl      { [true, false].sample }
