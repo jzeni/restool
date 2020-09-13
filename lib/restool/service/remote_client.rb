@@ -1,4 +1,5 @@
 require "net/http"
+require "net/https"
 require_relative 'request_utils'
 require_relative '../logger/request_logger'
 
