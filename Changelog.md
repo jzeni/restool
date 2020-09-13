@@ -1,3 +1,10 @@
+## 1.0.1
+
+FATAL errors, really sorry :(
+
+* Fixed missing OpenSSL.
+* Fixed wrong require.
+
 ## 1.0.0
 
 * Remove support for persistent connections

@@ -191,6 +191,13 @@ If you have any question or doubt regarding Restool you can:
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
+# Changelog
+
+### 1.0.1
+
+* Fixed missing OpenSSL.
+* Fixed wrong require.
+
 # Licence
 This software is licensed under the MIT license.
 
