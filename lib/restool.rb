@@ -1,8 +1,6 @@
 require_relative 'restool/settings/loader'
 require_relative 'restool/service/restool_service'
 
-require_relative 'restool/mock/restool'
-
 module Restool
 
   def self.create(service_name, opts = {}, &response_handler)
