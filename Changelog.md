@@ -1,3 +1,7 @@
+### 1.0.3
+
+* Fix error logging when log is enabled
+
 ## 1.0.1
 
 FATAL errors, really sorry :(
