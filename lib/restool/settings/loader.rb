@@ -11,7 +11,7 @@ module Restool
       DEFAULT_SSL_VERIFY = false
 
 
-      def self.load(service_name, opts)
+      def self.load(service_name, opts = {})
         service_config = config['services'].detect do |service|
           service['name'] == service_name.to_s
         end

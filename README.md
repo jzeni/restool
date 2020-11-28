@@ -119,7 +119,7 @@ remote_service.example_operation({ param_name: value })
 ```
 See other real examples in the examples directory
 
-## Additional configuration options
+## Additional features
 
 ### Basic authentication
 ```
@@ -165,6 +165,15 @@ services:
     timeout: 20 #seconds
     ...
 ```
+
+### Read config
+
+```
+configuration = Restool::Settings::Loader.load('github_api')
+
+service_name = configuration.service.name
+```
+
 
 ## Multiple services
 
