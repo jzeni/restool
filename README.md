@@ -202,6 +202,10 @@ If you have any question or doubt regarding Restool you can:
 
 # Changelog
 
+### 1.0.4
+
+* Allow to read configuration
+
 ### 1.0.3
 
 * Fix error logging when log is enabled
