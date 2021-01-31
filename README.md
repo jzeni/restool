@@ -2,7 +2,7 @@
 
 Make HTTP requests and handle their responses using simple method calls. Restool turns your HTTP API and its responses into Ruby interfaces.
 
-Probably the easiest way of calling an API in Ruby projects!
+Use a declarative approach to call any API and decouple from their responses using a custom transformation.
 
 [![Gem Version](https://badge.fury.io/rb/restool.png)](http://badge.fury.io/rb/restool)
 [![CircleCI build status](https://circleci.com/gh/jzeni/restool.svg?style=shield)](https://circleci.com/gh/jzeni/restool/tree/master)
@@ -12,11 +12,7 @@ Probably the easiest way of calling an API in Ruby projects!
 
 ## Installation
 
-Add the following line to Gemfile:
-
-`gem 'restool'`
-
-and run bundle install from your shell.
+Add the following line to Gemfile: `gem 'restool', '~> 1'` and run bundle install from your shell.
 
 To install the gem manually from your shell, run: `gem install restool`
 
