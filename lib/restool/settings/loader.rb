@@ -18,9 +18,7 @@ module Restool
 
         raise "Service #{service_name} not found in configuration" unless service_config
 
-        @service ||= build_service(service_config, opts)
-
-        @service
+        build_service(service_config, opts)
       end
 
       private
