@@ -196,20 +196,12 @@ If you have any question or doubt regarding Restool you can:
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
-# Changelog
+# Changelog (last)
 
-### 1.0.4
+## 1.0.5
 
-* Allow to read configuration
+* Fixed conflic when having multiple services managed by Restool
 
-### 1.0.3
-
-* Fix error logging when log is enabled
-
-### 1.0.1
-
-* Fixed missing OpenSSL.
-* Fixed wrong require.
 
 # Licence
 This software is licensed under the MIT license.

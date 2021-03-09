@@ -1,3 +1,7 @@
+## 1.0.5
+
+* Fixed conflicts when having multiple services managed by Restool
+
 ## 1.0.4
 
 * Allow to read configuration
