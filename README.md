@@ -117,6 +117,13 @@ See other real examples in the examples directory
 
 ## Additional features
 
+### Response header
+```
+remote_service = Restool.create('github_api') do |response, code, header|
+                   ...
+                 end
+```
+
 ### Basic authentication
 ```
 services:

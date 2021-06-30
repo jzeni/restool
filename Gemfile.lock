@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    restool (1.0.5)
+    restool (1.0.5.beta)
 
 GEM
   remote: http://rubygems.org/

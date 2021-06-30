@@ -10,9 +10,10 @@ module Restool
       def self.execute(remote_client, operation, path, params, headers,
                       response_handler, representations, basic_auth)
         remote_response = remote_client.make_request(path, operation.method, params, headers,
-                                                    basic_auth)
+                                                     basic_auth)
 
-        response = response_handler.call(remote_response.body, remote_response.code)
+        response = response_handler.call(remote_response.body, remote_response.code,
+                                         remote_response.each_header.to_h)
 
         return response if operation.response.nil?
 
