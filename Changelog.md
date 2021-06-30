@@ -1,3 +1,7 @@
+## 1.0.5.beta
+
+* Add header param to response block
+
 ## 1.0.5
 
 * Fixed conflicts when having multiple services managed by Restool
