@@ -1,3 +1,8 @@
+## 1.0.6
+
+* Refactor dev dependencies
+
+
 ## 1.0.5.beta
 
 * Add header param to response block

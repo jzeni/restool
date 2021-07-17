@@ -117,12 +117,6 @@ See other real examples in the examples directory
 
 ## Additional features
 
-### Response header
-```
-remote_service = Restool.create('github_api') do |response, code, header|
-                   ...
-                 end
-```
 
 ### Basic authentication
 ```
@@ -169,6 +163,14 @@ services:
     ...
 ```
 
+### Get the response header
+```
+remote_service = Restool.create('github_api') do |response, code, header|
+                   ...
+                 end
+```
+
+
 ### Read config
 
 ```
@@ -194,7 +196,6 @@ If you have any question or doubt regarding Restool you can:
 - create an issue
 - [open a question on Stackoverflow](http://stackoverflow.com/questions/ask?tags=restool) with tag
 [restool](http://stackoverflow.com/questions/tagged/restool)
-- or [join the chat on Gitter](https://gitter.im/restool/community)
 
 # Contributing
 1. Fork it
@@ -204,6 +205,11 @@ If you have any question or doubt regarding Restool you can:
 5. Create new Pull Request
 
 # Changelog (last)
+
+## 1.0.6
+
+* Refactor dev dependencies
+
 
 ## 1.0.5.beta
 
