@@ -16,4 +16,9 @@ Gem::Specification.new do |spec|
   spec.require_paths = %w[lib]
 
   spec.files         = Dir.glob('{lib}/**/*')
+
+  spec.add_development_dependency('rspec', '~> 3')
+  spec.add_development_dependency('factory_bot', '~> 5')
+  spec.add_development_dependency('rspec-its', '~> 1')
+  spec.add_development_dependency('webmock', '~> 3')
 end

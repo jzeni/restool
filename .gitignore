@@ -3,3 +3,4 @@ config/restool.yml
 .ruby-gemset
 
 *.gem
+Gemfile.lock
