@@ -25,7 +25,11 @@ module Restool
       def build_connection(host, verify_ssl, timeout, opts)
         uri = URI.parse(host)
 
-        connection = Net::HTTP.new(uri.host, uri.port)
+        connection = if proxy_uri
+                       Net::HTTP.new(uri.host, uri.port, proxy_uri.host, proxy_uri.port)
+                     else
+                       Net::HTTP.new(uri.host, uri.port)
+                     end
 
         connection.use_ssl      = uri.is_a?(URI::HTTPS)
         connection.verify_mode  = verify_ssl?(verify_ssl)
@@ -34,6 +38,13 @@ module Restool
         connection.set_debug_output($stdout) if opts[:debug]
 
         connection
+      end
+
+      def proxy_uri
+        # Patch for Net/Http issue with env var
+        proxy_env = ENV['http_proxy'] || ENV['HTTP_PROXY']
+
+        URI.parse(proxy_env) if proxy_env != nil && proxy_env != ''
       end
 
       def verify_ssl?(verify_ssl_setting)
