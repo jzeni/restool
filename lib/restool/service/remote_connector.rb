@@ -12,12 +12,24 @@ module Restool
         remote_response = remote_client.make_request(path, operation.method, params, headers,
                                                      basic_auth)
 
+        # Enumerable class does not have to_h in Ruby 1.9
+        header = header_to_hash(remote_response.each_header)
+
         response = response_handler.call(remote_response.body, remote_response.code,
-                                         remote_response.each_header.to_h)
+                                         header)
 
         return response if operation.response.nil?
 
         Restool::Traversal::Converter.convert(response, operation.response, representations)
+      end
+
+      private
+
+      def self.header_to_hash(header)
+        header.inject({}) do |memo, (key, value)|
+          memo[key] = value
+          memo
+        end
       end
 
     end

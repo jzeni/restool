@@ -1,3 +1,3 @@
 module Restool
-  VERSION = '1.0.7.beta'
+  VERSION = '1.0.8'
 end

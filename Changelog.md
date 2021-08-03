@@ -1,3 +1,7 @@
+## 1.0.8
+
+* Fix compatibility problem with Ruby 1.9 
+
 ## 1.0.6
 
 * Refactor dev dependencies

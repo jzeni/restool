@@ -206,18 +206,17 @@ If you have any question or doubt regarding Restool you can:
 
 # Changelog (last)
 
+## 1.0.8
+
+* Fix compatibility problem with Ruby 1.9
+
 ## 1.0.6
 
 * Refactor dev dependencies
 
-
 ## 1.0.5.beta
 
 * Add header param to response block
-
-## 1.0.5
-
-* Fixed conflic when having multiple services managed by Restool
 
 
 # Licence
