@@ -8,7 +8,7 @@ Use a declarative approach to call any API and decouple from their responses usi
 [![CircleCI build status](https://circleci.com/gh/jzeni/restool.svg?style=shield)](https://circleci.com/gh/jzeni/restool/tree/master)
 [![Travis Build Status](https://travis-ci.org/jzeni/restool.svg?branch=master)](https://travis-ci.org/jzeni/restool)
 [![Code Climate](https://codeclimate.com/github/jzeni/restool.svg)](https://codeclimate.com/github/jzeni/restool)
-[![Join the chat at https://gitter.im/restool/community](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/restool/community)
+
 
 ## Installation
 
@@ -222,9 +222,3 @@ If you have any question or doubt regarding Restool you can:
 # Licence
 This software is licensed under the MIT license.
 
-# Inspiration credits
-
-This gem is inspired by two gems developed by [Moove it](http://www.moove-it.com):
-
-- https://github.com/moove-it/angus-sdoc
-- https://github.com/moove-it/angus-remote
