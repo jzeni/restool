@@ -91,9 +91,9 @@ module Restool
         when Restool::Traversal::TRAVERSAL_TYPE_INTEGER
           Integer(value)
         when Restool::Traversal::TRAVERSAL_TYPE_DECIMAL
-          BigDecimal.new(scalar)
+          value.to_s.to_f
         when Restool::Traversal::TRAVERSAL_TYPE_BOOLEAN
-          value.downcase == 'true'
+          value.to_s.downcase == 'true'
         end
       end
 
