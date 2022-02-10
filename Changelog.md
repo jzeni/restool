@@ -1,6 +1,10 @@
+## 1.0.9
+
+* Fix Type parsing
+
 ## 1.0.8
 
-* Fix compatibility problem with Ruby 1.9 
+* Fix compatibility problem with Ruby 1.9
 
 ## 1.0.6
 

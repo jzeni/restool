@@ -206,6 +206,10 @@ If you have any question or doubt regarding Restool you can:
 
 # Changelog (last)
 
+# 1.0.9
+
+* Fix Type parsing
+
 ## 1.0.8
 
 * Fix compatibility problem with Ruby 1.9
@@ -214,11 +218,6 @@ If you have any question or doubt regarding Restool you can:
 
 * Refactor dev dependencies
 
-## 1.0.5.beta
-
-* Add header param to response block
-
 
 # Licence
 This software is licensed under the MIT license.
-
