@@ -4,7 +4,7 @@ module Restool
 
       Operation = Struct.new(:name, :path, :method, :uri_params, :response)
       OperationResponse = Struct.new(:fields)
-      Service = Struct.new(:name, :host, :operations, :timeout, :representations, :basic_auth, :verify_ssl, :opts)
+      Service = Struct.new(:name, :host, :operations, :timeout, :representations, :basic_auth, :verify_ssl, :ssl_version, :opts)
       Representation = Struct.new(:name, :fields)
       RepresentationField = Struct.new(:key, :metonym, :type)
       BasicAuthentication = Struct.new(:user, :password)
