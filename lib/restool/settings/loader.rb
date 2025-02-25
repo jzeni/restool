@@ -9,6 +9,7 @@ module Restool
 
       DEFAULT_TIMEOUT    = 60
       DEFAULT_SSL_VERIFY = false
+      DEFAULT_SSL_VERSION = nil
 
 
       def self.load(service_name, opts = {})
@@ -44,6 +45,7 @@ module Restool
           representations,
           basic_auth,
           service_config['ssl_verify'] || DEFAULT_SSL_VERIFY,
+          service_config['ssl_version'] || DEFAULT_SSL_VERSION,
           opts
         )
       end
