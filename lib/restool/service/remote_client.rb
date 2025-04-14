@@ -7,9 +7,9 @@ module Restool
   module Service
     class RemoteClient
 
-      def initialize(host, verify_ssl, timeout, opts, ssl_version)
+      def initialize(host, verify_ssl, timeout, opts)
         @request_logger = Restool::RequestLogger.new(host, opts)
-        @connection = build_connection(host, verify_ssl, timeout, opts, ssl_version)
+        @connection = build_connection(host, verify_ssl, timeout, opts)
       end
 
       def make_request(path, method, request_params, headers, basic_auth)
@@ -22,8 +22,11 @@ module Restool
 
       private
 
-      def build_connection(host, verify_ssl, timeout, opts, ssl_version)
+      def build_connection(host, verify_ssl, timeout, opts)
         uri = URI.parse(host)
+
+        opt_debug = opts[:debug].to_s.downcase == "true"
+        opt_ssl_version = opts[:ssl_version]
 
         connection = if proxy_uri
                        Net::HTTP.new(uri.host, uri.port, proxy_uri.host, proxy_uri.port)
@@ -35,8 +38,9 @@ module Restool
         connection.verify_mode  = verify_ssl?(verify_ssl)
         connection.read_timeout = timeout
         connection.open_timeout = timeout
-        connection.set_debug_output($stdout) if opts[:debug]
-        connection.ssl_version  = ssl_version.to_sym if ssl_version.present?
+
+        connection.ssl_version  = opt_ssl_version.to_sym if opt_ssl_version
+        connection.set_debug_output($stdout) if opt_debug
 
         connection
       end
