@@ -147,9 +147,18 @@ remote_service = Restool.create('github_api', logger: my_logger) do |response, c
                  end
 ```
 
-### Debugging
+### Opts
+
+Debugging
 ```
 remote_service = Restool.create('github_api', debug: true) do |response, code|
+                   ...
+                 end
+```
+
+SSL version
+```
+remote_service = Restool.create('github_api', ssl_version: :TLSv1_2) do |response, code|
                    ...
                  end
 ```
@@ -179,14 +188,6 @@ configuration = Restool::Settings::Loader.load('github_api')
 service_name = configuration.service.name
 ```
 
-### SSL Version
-```
-services:
-  - name: example_api
-    url: http://example.api
-    ssl_version: TLSv1_2
-    ...
-```
 
 ## Multiple services
 
